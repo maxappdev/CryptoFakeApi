@@ -1,0 +1,37 @@
+[
+  {
+    "name" : "Bitcoin",
+    "code" : "BTC",
+    "price" : "59062.51"
+  },
+  {
+    "name" : "Ethereum",
+    "code" : "ETH",
+    "price" : "4014.74"
+  },
+  {
+    "name" : "Binance Coin",
+    "code" : "BNB",
+    "price" : "456.75"
+  },
+  {
+    "name" : "Tether",
+    "code" : "USDT",
+    "price" : "1.00"
+  },
+  {
+    "name" : "Cardano",
+    "code" : "ADA",
+    "price" : "2.00"
+  },
+  {
+    "name" : "Solana",
+    "code" : "SOL",
+    "price" : "193.21"
+  },
+  {
+    "name" : "USD Coin",
+    "code" : "USDC",
+    "price" : "0.9998"
+  }
+]
