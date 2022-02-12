@@ -15,7 +15,7 @@ import java.util.Map;
 public class DealsController {
 
     @GetMapping("deals")
-    public Map<Integer, DealDTO> getAllDeals() throws IOException {
+    public List<DealDTO> getAllDeals() throws IOException {
         return FakeDealsDb.triggerSelect();
     }
 }

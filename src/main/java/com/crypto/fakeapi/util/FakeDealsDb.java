@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.*;
 
 public class FakeDealsDb {
-    private static Map<Integer, DealDTO> db = new HashMap<>();
+    private static List<DealDTO> db = new ArrayList<>();
 
-    public static Map<Integer, DealDTO> triggerSelect() throws IOException {
-        db.put(db.size() + 1, DealDTO.generateFakeDeal());
+    public static List<DealDTO> triggerSelect() throws IOException {
+        db.add(DealDTO.generateFakeDeal());
 
         return db;
     }
