@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @RestController
 public class PricesController {
+
+    private final Random r = new Random();
 
     @GetMapping("currencies")
     public List<TokenNameDTO>  getAllCurrencies() throws IOException {
@@ -20,7 +23,7 @@ public class PricesController {
     }
 
     @GetMapping("prices")
-    public PriceResponseDTO getPrice(@RequestParam String code) throws IOException {
-        return PriceResponseDTO.generateRandomPrice(code);
+    public Float getPrice(@RequestParam String code) throws IOException {
+        return 50 + r.nextFloat() * (55 - 50);
     }
 }

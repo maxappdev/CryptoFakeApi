@@ -25,7 +25,6 @@ public class PriceResponseDTO {
             result = new PriceResponseDTO();
             result.setName(foundDTO.getName());
             result.setCode(foundDTO.getCode());
-            result.setPrice(fakePriceChange(foundDTO.getPrice()));
             result.setCurrency(Currency.USD);
         }
 

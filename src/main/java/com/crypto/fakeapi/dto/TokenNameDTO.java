@@ -13,17 +13,11 @@ import java.util.*;
 public class TokenNameDTO {
     private String name;
     private String code;
-    private float price;
 
     public static List<TokenNameDTO> findAll() throws IOException {
         Path tokensJson = ResourceUtils.getFile("classpath:token_names.json").toPath();
         ObjectMapper mapper = new ObjectMapper();
         TokenNameDTO[] tokens = mapper.readValue(tokensJson.toFile(), TokenNameDTO[].class);
-        for (TokenNameDTO token : tokens) {
-            Random r = new Random();
-            float random = 100 + r.nextFloat() * (1000 - 100);
-            token.setPrice(random);
-        }
         return Arrays.asList(tokens);
     }
 
