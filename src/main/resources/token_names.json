@@ -1,37 +1,46 @@
 [
   {
     "name" : "Bitcoin",
-    "code" : "BTC",
-    "price" : "59062.51"
+    "code" : "BTC"
   },
   {
     "name" : "Ethereum",
-    "code" : "ETH",
-    "price" : "4014.74"
+    "code" : "ETH"
   },
   {
     "name" : "Binance Coin",
-    "code" : "BNB",
-    "price" : "456.75"
+    "code" : "BNB"
   },
   {
     "name" : "Tether",
-    "code" : "USDT",
-    "price" : "1.00"
+    "code" : "USDT"
   },
   {
     "name" : "Cardano",
-    "code" : "ADA",
-    "price" : "2.00"
+    "code" : "ADA"
   },
   {
     "name" : "Solana",
-    "code" : "SOL",
-    "price" : "193.21"
+    "code" : "SOL"
   },
   {
     "name" : "USD Coin",
-    "code" : "USDC",
-    "price" : "0.9998"
+    "code" : "USDC"
+  },
+  {
+    "name" : "Commemorative Token",
+    "code" : "MCT"
+  },
+  {
+    "name" : "Abele",
+    "code" : "ABELE"
+  },
+  {
+    "name" : "Aquachain",
+    "code" : "AQUA"
+  },
+  {
+    "name" : "Dogecoin",
+    "code" : "DOGE"
   }
 ]
