@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Data
 public class DealDTO {
@@ -32,7 +33,7 @@ public class DealDTO {
         String receiver = faker.name().fullName();
 
         String currencyCode = TokenNameDTO.findAll().get((int) (Math.random() * TokenNameDTO.findAll().size())).getCode();
-        Float sum = 1 + rand.nextFloat() * (15 - 1);
+        Integer sum = ThreadLocalRandom.current().nextInt(1, 15 + 1);
         String operationName = getRandomOperationName();
         String operation = operationName + " " + sum + " " + currencyCode;
 
