@@ -7,9 +7,7 @@ import org.springframework.util.ResourceUtils;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Data
 public class TokenNameDTO {
@@ -17,13 +15,22 @@ public class TokenNameDTO {
     private String code;
     private float price;
 
+    public static List<TokenNameDTO> findAll() throws IOException {
+        Path tokensJson = ResourceUtils.getFile("classpath:token_names.json").toPath();
+        ObjectMapper mapper = new ObjectMapper();
+        TokenNameDTO[] tokens = mapper.readValue(tokensJson.toFile(), TokenNameDTO[].class);
+        for (TokenNameDTO token : tokens) {
+            Random r = new Random();
+            float random = 100 + r.nextFloat() * (1000 - 100);
+            token.setPrice(random);
+        }
+        return Arrays.asList(tokens);
+    }
+
     public static TokenNameDTO findByCode(String code) throws IOException {
         TokenNameDTO result = null;
 
-        Path tokensJson = ResourceUtils.getFile("fakedata/token_names.json").toPath(); //TODO this string does not work
-        ObjectMapper mapper = new ObjectMapper();
-        TokenNameDTO[] tokens = mapper.readValue(tokensJson.toFile(), TokenNameDTO[].class);
-        List<TokenNameDTO> tokenNamesList = Arrays.asList(tokens);
+        List<TokenNameDTO> tokenNamesList = findAll();
 
         for (TokenNameDTO token : tokenNamesList) {
             if ((token != null) && (token.getCode().equalsIgnoreCase(code))) {
