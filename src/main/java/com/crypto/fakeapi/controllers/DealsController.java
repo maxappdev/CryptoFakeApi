@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,8 @@ public class DealsController {
 
     @GetMapping("deals")
     public List<DealDTO> getAllDeals() throws IOException {
-        return FakeDealsDb.triggerSelect();
+        List<DealDTO> result = FakeDealsDb.triggerSelect();
+        Collections.reverse(result);
+        return result;
     }
 }
