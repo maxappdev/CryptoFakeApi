@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 import lombok.Data;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Random;
 
 @Data
@@ -14,11 +16,15 @@ public class DealDTO {
     String from;
     String to;
     String description;
+    Timestamp timestamp;
 
     private DealDTO(String from, String to, String description) {
         this.from = from;
         this.to = to;
         this.description = description;
+
+        Date date = new Date();
+        this.timestamp = new Timestamp(date.getTime());
     }
 
     public static DealDTO generateFakeDeal() throws IOException {
